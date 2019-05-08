@@ -9,15 +9,15 @@ const resolvers = {
   Mutation: {
 
     sendMessage: async (parent, {sessionToken, sessionID, message}, {apiKey, chatbotURL, accessToken, prisma}) => {
-    //  console.log(`in send message ${chatbotURL}/conversation/message`,'sessionToken',`Bearer ${sessionToken}`)
-   //   console.log('accessToken',`Bearer ${accessToken}`)
+    console.log(`in send message ${chatbotURL}/conversation/message`,'sessionToken',`Bearer ${sessionToken}`)
+    console.log('accessToken',`Bearer ${accessToken}`)
     const data = JSON.stringify({message})
   //    console.log('data', data)
-//console.log('apiKey',apiKey)
+console.log('apiKey',apiKey)
       try {
         const results = await axios({
           method: 'post',
-          data: {message},
+          data: JSON.stringify({message}),
           url: `${chatbotURL}/conversation/message`,
           headers: {
             'x-inbenta-key': apiKey,
@@ -26,7 +26,7 @@ const resolvers = {
           }
 
         })
-       // console.log('got request result',results.data)
+       console.log('got request result',results.data)
         const conversationFragment = await prisma.createConversationFragment({sessionID, message, reply: results.data.answers[0].message})
       //  console.log('created fragment', conversationFragment)
         const addlData = await messageDecorator(sessionID,conversationFragment)
