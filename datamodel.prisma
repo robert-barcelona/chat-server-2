@@ -1,0 +1,9 @@
+
+
+type ConversationFragment {
+id: ID! @id
+added: DateTime! @createdAt
+message: String!
+reply:String
+sessionID:String!
+}
