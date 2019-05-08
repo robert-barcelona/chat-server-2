@@ -9,5 +9,11 @@
     "graphql": "^14.2.1",
     "prisma-cli": "^1.0.9",
     "prisma-client-lib": "^1.30.4"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
