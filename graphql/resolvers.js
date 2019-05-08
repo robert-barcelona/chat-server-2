@@ -17,7 +17,7 @@ console.log('apiKey',apiKey)
       try {
         const results = await axios({
           method: 'post',
-          data: JSON.stringify({message}),
+          data: {message},
           url: `${chatbotURL}/conversation/message`,
           headers: {
             'x-inbenta-key': apiKey,
