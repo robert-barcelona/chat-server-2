@@ -1,1 +1,1 @@
-web: node index.jsgi
+web: node index.js
