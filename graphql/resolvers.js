@@ -51,9 +51,11 @@ console.log('apiKey',apiKey)
           }
 
         })
+        console.log('results from getCredentials',results)
+
         sessionToken = results.data.sessionToken
         sessionID = results.data.sessionId
-       // console.log('GetCredentials: sessionToken = ',sessionToken, 'sessionID = ', sessionID)
+        console.log('GetCredentials: sessionToken = ',sessionToken, 'sessionID = ', sessionID)
         return {sessionToken,sessionID}
 
       } catch (e) {
