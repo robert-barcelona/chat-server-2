@@ -17,7 +17,7 @@ const getAuthorization = async (apiKey) => {
   console.log('in authorization',currentExpiration,currentAccessToken)
 
   const secret = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoieW9kYV9jaGF0Ym90X2VuIn0.anf_eerFhoNq6J8b36_qbD4VqngX79-yyBKWih_eA1-HyaMe2skiJXkRNpyWxpjmpySYWzPGncwvlwz5ZRE7eg'
-  if (currentExpiration && currentAccessToken && (Date.now() - currentExpiration > 120000)) return {accessToken:currentAccessToken,expiration:currentExpiration}
+  /*if (currentExpiration && currentAccessToken && (Date.now() - currentExpiration > 120000)) return {accessToken:currentAccessToken,expiration:currentExpiration}*/
 
   console.log('in authorization, getting new tokens')
 
