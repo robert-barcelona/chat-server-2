@@ -6,7 +6,7 @@ const notFounds = {}
 const getSWCharacters = async (text, sessionID, limit = 25) => {
   if (!notFounds[sessionID]) notFounds[sessionID] = false // yes, this will grow without bounds, but for a quick and dirty solution it'll work
   const wasFoundBefore = notFounds[sessionID]
-  if (text.toLowerCase().includes('I couldn\'t find any information relating to your question') && !wasFoundBefore) {
+  if (text.toLowerCase().includes('I couldn\'t find') || (text.toLowerCase().includes('nothing I can find')) && !wasFoundBefore) {
     notFounds[sessionID] = true
     return []
   } else if (!text.toLowerCase().includes('not found')) {
